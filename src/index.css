@@ -1,0 +1,40 @@
+@import "tailwindcss";
+/*@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Poppins:wght@600&family=Sora:wght@500&family=JetBrains+Mono&display=swap');*/
+
+@layer base {
+  :root {
+    --color-primary: #6B46C1; /* Logo primary color */
+    --color-accent: #38B2AC; /* Logo accent color */
+    --color-bg-light: #F7FAFC; /* Light background */
+    --color-bg-dark: #2D3748; /* Dark background */
+    --color-text-light: #2D3748; /* Light text */
+    --color-text-dark: #E2E8F0; /* Dark text */
+    --color-accent-hover: #2C7A7B; /* Darker accent for hover */
+  }
+
+  [data-theme='dark'] {
+    --color-bg-light: #2D3748;
+    --color-bg-dark: #1A202C;
+    --color-text-light: #E2E8F0;
+    --color-text-dark: #A0AEC0;
+  }
+}
+
+@layer components {
+  .bg-light-surface { background-color: var(--color-bg-light); }
+  .bg-dark-bg { background-color: var(--color-bg-dark); }
+  .text-text-light { color: var(--color-text-light); }
+  .text-text-dark { color: var(--color-text-dark); }
+  .bg-primary { background-color: var(--color-primary); }
+  .text-primary { color: var(--color-primary); }
+  .bg-accent { background-color: var(--color-accent); }
+  .hover\:bg-accent\/20:hover { background-color: color-mix(in srgb, var(--color-accent) 20%, transparent); }
+  .focus\:ring-primary:focus { box-shadow: 0 0 0 3px var(--color-primary); }
+}
+
+@layer utilities {
+  .transition-theme {
+    transition-property: background-color, color;
+    transition-duration: 300ms;
+  }
+}
